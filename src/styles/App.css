@@ -1,0 +1,55 @@
+* {
+    margin-top: 0;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.App {
+    width: 800px;
+}
+
+.table {
+    display: grid;
+    padding: 15px; /*внутренние отступы*/
+    grid-template-columns: 20px 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+    border-bottom: solid silver;
+    border-top: solid silver;
+    background-color: rgb(242, 242, 242);
+}
+
+.person {
+    display: grid;
+    padding: 15px; /*внутренние отступы*/
+    word-break: break-all;
+    grid-template-columns: 20px 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+    border-bottom: 2px solid silver;
+}
+
+.st_btns {
+    text-align: right;
+}
+
+.edit_btn {
+    background: url("/src/image/edit-icon.png");
+    background-size: cover;
+    border: none;
+    height: 50px;
+    width: 50px;
+}
+
+.del_btn {
+    background: url("/src/image/delete-icon.png");
+    background-size: cover;
+    border: none;
+    height: 50px;
+    width: 50px;
+}
+
+
