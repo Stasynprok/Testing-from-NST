@@ -12,6 +12,18 @@ class App extends React.Component{
         active: false
     };
 
+    componentDidMount() {
+        const localStorageRef = localStorage.getItem('persons')
+        if(localStorageRef){
+            this.setState({ persons: JSON.parse(localStorageRef)})
+        }
+
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        localStorage.setItem('persons', JSON.stringify(this.state.persons))
+    }
+
 
     generateID = () => {
         let indexId = []
