@@ -12,16 +12,56 @@ class App extends React.Component{
         active: false
     };
 
-    componentDidMount() {
-        const localStorageRef = localStorage.getItem('persons')
-        if(localStorageRef){
-            this.setState({ persons: JSON.parse(localStorageRef)})
+    saveData = (person) => {
+        let src = 'http://localhost:3001/'
+        let api = 'api/v1/persons'
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(person)
         }
-
+        fetch(`${src}${api}`, requestOptions)
+            .then(response => response.json())
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        localStorage.setItem('persons', JSON.stringify(this.state.persons))
+    delData = (person) => {
+        let src = 'http://localhost:3001/'
+        let api = `api/v1/person/${person}`
+        const requestOptions = {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+        }
+        fetch(`${src}${api}`, requestOptions)
+            .then(response => response.json())
+    }
+
+    editData = (personid, fname, lname) => {
+        let src = 'http://localhost:3001/'
+        let api = `api/v1/person/${personid}`
+        const data = {
+            "id": personid,
+            "firstN": fname,
+            "lastN": lname
+        }
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }
+        fetch(`${src}${api}`, requestOptions)
+            .then(response => response.json())
+    }
+
+    componentDidMount() {
+        let src = 'http://localhost:3001/'
+        let api = 'api/v1/persons'
+        fetch(`${src}${api}`)
+            .then(response => response.json())
+            .then(
+                (result) => {
+                    this.setState({persons: result})
+                }
+            )
     }
 
 
@@ -57,7 +97,9 @@ class App extends React.Component{
     addPers = (person) => {
         const persons = {...this.state.persons}
         persons[`person${this.generateID()}`] = person;
+        this.saveData(persons[`person${this.generateID()}`])
         this.setState({persons: persons})
+
         toast.success('Сотрудник добавлен')
     }
 
@@ -65,11 +107,12 @@ class App extends React.Component{
         const persons = {...this.state.persons}
         persons[key] = updatePerson
         this.setState({persons: persons})
-
+        this.editData(persons[key].id, persons[key].firstN, persons[key].lastN)
     }
 
     delPers = (key) => {
         const persons = {...this.state.persons}
+        this.delData(persons[key].id)
         delete persons[key]
         this.setState({persons: persons})
     }
