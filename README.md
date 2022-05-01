@@ -50,29 +50,29 @@ serve -s build
 ## **Пустая таблица**
 
 <p align="center">
-<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/1.PNG" width="80%">
+<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/1.PNG">
 </p>
 
 ## **Таблица с сотрудниками**
 
 <p align="center">
-<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/2.PNG" width="80%">
+<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/2.PNG">
 </p>
 
 ## **Добавление сотрудника**
 
 <p align="center">
-<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/3.PNG" width="80%">
+<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/3.PNG">
 </p>
 
 ## **Редактирование сотрудника**
 
 <p align="center">
-<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/4.PNG" width="80%">
+<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/4.PNG">
 </p>
 
 ## **Удаление сотрудника**
 
 <p align="center">
-<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/5.PNG" width="80%">
+<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/5.PNG">
 </p>
