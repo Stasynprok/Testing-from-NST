@@ -39,7 +39,8 @@ serve -s build
 
 ## Расширенное описание
 
-- Для реализации приложения был использован React.
+- Для реализации приложения был использован **React**.
+- Использовалось оформление кода по **Google JavaScript Style Guide**.
 - Верстка адаптивна, работает исправно на различных разрешениях.
 - Приложение стабильно работает на **Google**, на **IE11** работает, но имеются проблемы с расположениями компонентов.
 - Для эмуляции сервера используется **json server**. В **package.json** прописан скрипт 'server' для запуска сервера с настройками.
@@ -50,29 +51,29 @@ serve -s build
 ## **Пустая таблица**
 
 <p align="center">
-<img  src="./readme_image/1.png" width="80%">
+<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/1.PNG">
 </p>
 
 ## **Таблица с сотрудниками**
 
 <p align="center">
-<img  src="./readme_image/2.png" width="80%">
+<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/2.PNG">
 </p>
 
 ## **Добавление сотрудника**
 
 <p align="center">
-<img  src="./readme_image/3.png" width="80%">
+<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/3.PNG">
 </p>
 
 ## **Редактирование сотрудника**
 
 <p align="center">
-<img  src="./readme_image/4.png" width="80%">
+<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/4.PNG">
 </p>
 
 ## **Удаление сотрудника**
 
 <p align="center">
-<img  src="./readme_image/5.png" width="80%">
+<img  src="https://raw.githubusercontent.com/Stasynprok/Testing-from-NST/main/readme_image/5.PNG">
 </p>
