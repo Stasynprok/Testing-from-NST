@@ -2,18 +2,18 @@
   "persons": [
     {
       "id": 1,
-      "firstN": "as",
-      "lastN": "asdasd"
+      "firstN": "Jason",
+      "lastN": "Statham"
     },
     {
       "id": 2,
-      "firstN": "qweqweeeeeeeeeeeeeeeeeeeeee",
-      "lastN": "daseqw"
+      "firstN": "Robert",
+      "lastN": "Downey Jr."
     },
     {
       "id": 3,
-      "firstN": "sdawqwwwwwwwwwwwwwwwwwwwwww",
-      "lastN": "sdaczeeeeeeeeeeeeeeeeeeeeeeee"
+      "firstN": "Иван",
+      "lastN": "Иванов"
     }
   ]
 }
