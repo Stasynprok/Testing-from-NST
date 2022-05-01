@@ -1,0 +1,36 @@
+.name_block{
+    border: 2px silver solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.f_name_p{
+    font-size: 1.5rem;
+    text-align: right;
+}
+.l_name_p{
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+.btn_block{
+    float: right;
+}
+
+.delete_btn{
+    margin-top: 10px;
+    background: rgb(246, 39, 39);
+    font-weight: 700;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+}
+
+.back_btn{
+    margin-top: 10px;
+    background: rgb(217, 217, 217);
+    font-weight: 700;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+}

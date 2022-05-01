@@ -15,9 +15,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "eslint --ext .js,.jsx src --fix",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server -p 3001 -w server/db.json --id id --routes server/routes.json"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 80
   },
   "eslintConfig": {
     "extends": [
@@ -36,5 +41,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "prettier": "^2.6.2",
+    "prop-types": "^15.8.1"
   }
 }

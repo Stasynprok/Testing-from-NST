@@ -1,20 +1,22 @@
 import React from 'react';
-import "./Modal.css"
+import './modal.css';
+import PropTypes from 'prop-types';
 
+class Modal extends React.Component {
+  static propTypes = {
+    active: PropTypes.bool,
+    import: PropTypes.object,
+  };
 
-class Modal extends React.Component{
-
-    render() {
-        return(
-            <div>
-                <div className={this.props.active ? "modal active" : "modal" }>
-                    <div className="modal_content">
-                        {this.props.import}
-                    </div>
-                </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <div className={this.props.active ? 'modal active' : 'modal'}>
+          <div className="modal_content">{this.props.import}</div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Modal;
