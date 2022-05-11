@@ -1,0 +1,96 @@
+* {
+    margin-top: 0;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.App {
+    width: 800px;
+}
+
+.table {
+    display: grid;
+    padding: 15px;
+    grid-template-columns: 20px 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+    border-bottom: solid silver;
+    border-top: solid silver;
+    background-color: rgb(242, 242, 242);
+}
+
+.person {
+    display: grid;
+    padding: 15px;
+    word-break: break-all;
+    grid-template-columns: 20px 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+    border-bottom: 2px solid silver;
+}
+
+.add_btn {
+    margin-top: 10px;
+    background: rgb(125, 169, 205);
+    font-weight: 700;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    transition: 0.2s;
+}
+.add_btn:hover {
+    background: rgb(53, 167, 110);
+}
+.add_btn:active {
+    background: rgb(33, 147, 90);
+}
+
+.st_btns {
+    text-align: right;
+}
+
+.edit_btn {
+    background: url("/src/image/edit-icon.png");
+    background-size: cover;
+    border: none;
+    height: 50px;
+    width: 50px;
+    transition: 0.2s;
+}
+.edit_btn:hover {
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgba(33, 147, 90, 0.5);
+}
+
+.edit_btn:active {
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgba(33, 147, 90, 1);
+}
+
+.del_btn {
+    background: url("/src/image/delete-icon.png");
+    background-size: cover;
+    border: none;
+    height: 50px;
+    width: 50px;
+    transition: 0.2s;
+}
+
+.del_btn:hover {
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgba(147, 33, 33, 0.5);
+}
+
+.del_btn:active {
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgba(147, 33, 33, 1);
+}
+
+
