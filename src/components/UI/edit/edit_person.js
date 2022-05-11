@@ -1,10 +1,12 @@
 import React from 'react';
-import './edit_person.css';
 import PropTypes from 'prop-types';
+import toast, { Toaster } from 'react-hot-toast';
 
 class EditPerson extends React.Component {
   state = {
-    target: true,
+    target: false,
+    firstName: this.props.person.firstN,
+    lastName: this.props.person.lastN,
   };
 
   static propTypes = {
@@ -12,66 +14,105 @@ class EditPerson extends React.Component {
     person: PropTypes.object,
     editPerson: PropTypes.func,
     activeMod: PropTypes.func,
-    toast: PropTypes.func,
   };
+
+  handleInputChanges = this.handleInputChange.bind(this);
+
+  handleInputChange(e) {
+    const target = e.target;
+    const name = target.name;
+    const value = target.value;
+    this.setState({
+      [name]: value,
+    });
+  }
 
   editPerson = (e) => {
     e.preventDefault();
-    if (this.state.target === false || !/\d/.test(e.currentTarget.value)) {
-      const updatePerson = {
-        ...this.props.person,
-        [e.currentTarget.name]: e.currentTarget.value,
+    if (this.state.target) {
+      const person = {
+        id: this.props.person.id,
+        firstN: this.state.firstName,
+        lastN: this.state.lastName,
       };
-
-      this.props.editPerson(this.props.index, updatePerson);
+      this.props.editPerson(this.props.index, person);
+      e.currentTarget.reset();
+    } else if (!this.state.target) {
+      e.currentTarget.reset();
     }
   };
 
   backB = () => {
-    this.setState({ target: false });
+    this.setState({
+      target: false,
+      firstName: this.props.person.firstN,
+      lastName: this.props.person.lastN,
+    });
   };
 
   saveB = () => {
-    this.setState({ target: true });
+    if (
+      !/\d/.test(this.state.firstName) &&
+      !/\d/.test(this.state.lastName) &&
+      this.state.lastName !== '' &&
+      this.state.firstName !== ''
+    ) {
+      this.setState({ target: true });
+      this.props.activeMod();
+      toast.success('Изменения сохранены');
+    } else {
+      this.setState({ target: false });
+      if (this.state.lastName === '' || this.state.firstName === '') {
+        toast.error('Заполните все поля!!!', {
+          style: {
+            background: '#B22222',
+            color: 'white',
+          },
+        });
+      } else {
+        toast.error('Имя и фамилия не должны содержать числа!', {
+          style: {
+            background: '#B22222',
+            color: 'white',
+          },
+        });
+      }
+    }
   };
 
   render() {
     return (
-      <div>
+      <form onSubmit={this.editPerson}>
         <h1>Редактирование сотрудника</h1>
         <p>
           <input
             className="input_f"
-            onChange={this.editPerson}
-            name="firstN"
+            name="firstName"
             type="text"
             placeholder="Имя"
-            value={this.props.person.firstN}
+            value={this.state.firstName}
+            onChange={this.handleInputChanges}
           />
         </p>
         <p>
           <input
             className="input_l"
-            onChange={this.editPerson}
-            name="lastN"
+            name="lastName"
             type="text"
             placeholder="Фамилия"
-            value={this.props.person.lastN}
+            value={this.state.lastName}
+            onChange={this.handleInputChanges}
           />
         </p>
-
         <div className="btn_block">
           <button
             className="save_btn"
             onClick={() => {
               this.saveB();
-              this.props.activeMod();
-              this.props.toast();
             }}
           >
             Сохранить
           </button>
-
           <button
             className="back_btn"
             onClick={() => {
@@ -82,7 +123,9 @@ class EditPerson extends React.Component {
             Назад к таблице
           </button>
         </div>
-      </div>
+
+        <Toaster position="bottom-center" reverseOrder={false} />
+      </form>
     );
   }
 }

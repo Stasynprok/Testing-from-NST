@@ -1,5 +1,4 @@
 import React from 'react';
-import './del_person.css';
 import PropTypes from 'prop-types';
 
 class DelPerson extends React.Component {
@@ -17,7 +16,7 @@ class DelPerson extends React.Component {
 
   deletePerson = (e) => {
     e.preventDefault();
-    if (this.state.target === true) {
+    if (this.state.target) {
       this.props.delPerson(this.props.index);
     }
   };

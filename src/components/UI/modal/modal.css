@@ -26,18 +26,83 @@
     max-width: 700px;
 }
 
-.add_btn {
+input{
+    width: 100%;
+    height: 30px;
+}
+
+h1{
+   text-align: center;
+}
+
+.name_block{
+    border: 2px silver solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.f_name_p{
+    font-size: 1.5rem;
+    text-align: right;
+}
+.l_name_p{
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+
+.btn_block{
+    float: right;
+}
+
+.save_btn{
     margin-top: 10px;
-    background: rgb(125, 169, 205);
+    background: rgb(53, 167, 110);
     font-weight: 700;
     text-decoration: none;
     padding: .8em 1em calc(.8em + 3px);
     border-radius: 3px;
     transition: 0.2s;
 }
-.add_btn:hover {
-    background: rgb(53, 167, 110)
+
+.save_btn:hover {
+    background: rgb(33, 147, 90);
 }
-.add_btn:active {
-    background: rgb(33,147,90);
+.save_btn:active {
+    background: rgb(6, 185, 95);
+}
+
+.back_btn{
+    margin-top: 10px;
+    background: rgb(217, 217, 217);
+    font-weight: 700;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.back_btn:hover {
+    background: rgb(177, 177, 177);
+}
+.back_btn:active {
+    background: rgb(148, 148, 148);
+}
+
+.delete_btn{
+    margin-top: 10px;
+    background: rgb(246, 39, 39);
+    font-weight: 700;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.delete_btn:hover{
+    background: rgb(180, 25, 25);
+}
+
+.delete_btn:active{
+    background: rgb(133, 21, 21);
 }

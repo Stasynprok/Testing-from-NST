@@ -1,6 +1,5 @@
 import React from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import './input_person.css';
 import PropTypes from 'prop-types';
 
 class InputPerson extends React.Component {
@@ -20,7 +19,7 @@ class InputPerson extends React.Component {
 
   addPerson = (e) => {
     e.preventDefault();
-    if (this.state.target === true) {
+    if (this.state.target) {
       const person = {
         id: this.props.gen(),
         firstN: this.firstNRef.current.value,
@@ -28,15 +27,14 @@ class InputPerson extends React.Component {
       };
       this.props.addPerson(person);
       e.currentTarget.reset();
-    } else if (this.state.targetBack === true) {
+    } else if (this.state.targetBack) {
       e.currentTarget.reset();
       this.setState({ targetBack: false });
     }
   };
 
   backB = () => {
-    this.setState({ target: false });
-    this.setState({ targetBack: true });
+    this.setState({ target: false, targetBack: true });
   };
 
   saveB = () => {

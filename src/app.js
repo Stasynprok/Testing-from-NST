@@ -84,8 +84,7 @@ class App extends React.Component {
   };
 
   activeMod = () => {
-    const { active } = this.state;
-    this.setState({ active: !active });
+    this.setState({ active: !this.state.active });
   };
 
   addPerson = (person) => {

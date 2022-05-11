@@ -20,17 +20,11 @@ class PersonItem extends React.Component {
   };
 
   activeModE = () => {
-    const active = this.state.activeE;
-    this.setState({ activeE: !active });
+    this.setState({ activeE: !this.state.activeE });
   };
 
   activeModD = () => {
-    const active = this.state.activeD;
-    this.setState({ activeD: !active });
-  };
-
-  toastEdit = () => {
-    toast.success('Изменения сохранены');
+    this.setState({ activeD: !this.state.activeD });
   };
 
   toastDell = () => {
@@ -64,7 +58,6 @@ class PersonItem extends React.Component {
               person={this.props.details}
               editPerson={this.props.editPerson}
               index={this.props.index}
-              toast={this.toastEdit}
             />
           }
         />
